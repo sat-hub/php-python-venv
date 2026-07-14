@@ -1,0 +1,56 @@
+{
+	"name": "sat-hub/php-python-venv",
+	"description": "Manage a Python venv in PHP.",
+	"keywords": ["php", "python", "venv"],
+	"authors": [
+		{
+			"name": "Sascha Ternes",
+			"email": "sascha.ternes@diemedialen.de",
+			"role": "Developer"
+		}
+	],
+	"type": "library",
+	"license": "MIT",
+	"time": "2026-07-15",
+
+	"require": {
+		"php": "~8.2"
+	},
+	"require-dev": {
+		"phpmd/phpmd": "~2.15",
+		"phpstan/phpstan": "~2.1",
+		"phpstan/phpstan-phpunit": "~2.0",
+		"sat-hub/phpcpd": "~7.0.0",
+		"sat-hub/phploc": "~8.0.0",
+		"sat-hub/phpunit": "~1.10.0",
+		"squizlabs/php_codesniffer": "~3.13"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "git@github.com:sat-hub/phpcpd.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:sat-hub/phploc.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:sat-hub/phpunit.git"
+		}
+	],
+
+	"autoload": {
+		"psr-4": {
+			"SATHub\\PHPPythonVenv\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"SATHub\\PHPPythonVenv\\Test\\": "test/"
+		}
+	},
+
+	"minimum-stability": "stable",
+	"prefer-stable": true
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="phpythonvenv" namespace="SatHub\PhpPythonVenv">
+    <description>A rule set for PHP Python venv.</description>
+    <file>src</file>
+    <file>test</file>
+    <rule ref="PSR12">
+        <exclude name="Generic.Files.LineLength"/>
+        <exclude name="PSR2.ControlStructures.SwitchDeclaration"/>
+        <exclude name="PSR12.Files.DeclareStatement"/>
+        <exclude name="PSR12.Files.FileHeader"/>
+    </rule>
+    <rule ref="Generic.Commenting.Todo"/>
+</ruleset>
