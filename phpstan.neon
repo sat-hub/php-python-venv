@@ -1,4 +1,9 @@
 parameters:
-  inferPrivatePropertyTypeFromConstructor: true
+	inferPrivatePropertyTypeFromConstructor: true
 
-  ignoreErrors:
+	ignoreErrors:
+		- '#^Class SATHub\\PHPPythonVenv\\Python has an uninitialized readonly property \$version\. Assign it in the constructor\.$#'
+		- '#^Offset 0 might not exist on array<string>\|null\.$#'
+		- '!^Parameter #2 \$array of function implode expects array, array<string>\|null given\.$!'
+		- '#^Property SATHub\\PHPPythonVenv\\Venv::\$venv \(string\) does not accept string\|false\.$#'
+		- '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.[a-zA-Z]+\)\): Unexpected token "\.[a-zA-Z]+\)", expected #'

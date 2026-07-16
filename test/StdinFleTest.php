@@ -29,10 +29,9 @@ class StdinFleTest extends Base
 	}
 
 	#[Test]
-	public function withContent() {
+	public function withContent(): void {
 		$file = StdinFile::withContent(self::CONTENT);
 
-		$this->assertInstanceOf(StdinFile::class, $file);
 		$this->assertFileExists((string)$file);
 		$this->assertSame(self::CONTENT, file_get_contents((string)$file));
 	}

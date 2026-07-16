@@ -3,11 +3,11 @@
 BIN=vendor/bin
 
 echo PHPLOC
-$BIN/phploc app
+$BIN/phploc src
 echo
 
 echo PHPUNIT
-$BIN/phpunit
+XDEBUG_MODE=coverage $BIN/phpunit --coverage-text
 echo
 
 echo PHPCS
@@ -25,4 +25,4 @@ $BIN/phpstan --level=max analyse src test
 echo
 
 echo PHPCPD
-$BIN/phpcpd --min-lines 10 src test
+$BIN/phpcpd --min-lines 3 src test

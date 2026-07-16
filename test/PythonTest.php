@@ -4,7 +4,6 @@ namespace SATHub\PHPPythonVenv\Test;
 
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Test;
-use SATHub\PHPPythonVenv\StdinFile;
 use SATHub\PHPUnit\Base;
 
 use SATHub\PHPPythonVenv\Exception\PythonCommandCannotBeExecutedException;
@@ -13,7 +12,7 @@ use SATHub\PHPPythonVenv\Python;
 
 class PythonTest extends Base
 {
-	protected const CONTENT = 'These are 20 characters.';
+	use ContentTrait;
 
 	#[Test]
 	public function construct(): Python {
@@ -49,7 +48,7 @@ class PythonTest extends Base
 	#[Test]
 	#[Depends('construct')]
 	public function runPythonCommandWithError(Python $python): void {
-		$this->assertGreaterThan(0, $python->run('--ThisIsAnOptionThatDoesNotExist 2>&1'));
+		$this->assertGreaterThan(0, $python->run(['--ThisIsAnOptionThatDoesNotExist', '2>&1']));
 	}
 
 	#[Test]
@@ -64,7 +63,6 @@ class PythonTest extends Base
 	#[Depends('construct')]
 	public function runPythonWithInputAndOutput(Python $python): void {
 		$this->assertSame(0, $python->run(__DIR__ . '/python/test-stdin.py', $output, self::CONTENT));
-		$this->assertArray($output, 1, 'string');
-		$this->assertSame(strlen(self::CONTENT) . ' ' . self::CONTENT, $output[0]);
+		$this->assertIsCorrectContent($output);
 	}
 }

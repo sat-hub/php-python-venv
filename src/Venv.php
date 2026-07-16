@@ -53,6 +53,10 @@ class Venv
 		$this->venv = realpath(trim($pathToVenv));
 	}
 
+	/**
+	 * @param array<string>|string $arguments
+	 * @param array<string>|null $output
+	 */
 	public function python(array|string $arguments, ?array &$output = null, ?string $input = null): int {
 		if (!$this->python) {
 			Python::setCustomExecutable($this->getExecutable());
@@ -61,6 +65,10 @@ class Venv
 		return $this->python->run($arguments, $output, $input);
 	}
 
+	/**
+	 * @param array<string>|string $arguments
+	 * @param array<string>|null $output
+	 */
 	public function pip(array|string $arguments, ?array &$output = null): int {
 		if (is_array($arguments)) {
 			$command = trim(implode(' ', $arguments));

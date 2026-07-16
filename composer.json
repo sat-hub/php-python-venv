@@ -11,18 +11,18 @@
 	],
 	"type": "library",
 	"license": "MIT",
-	"time": "2026-07-15",
+	"time": "2026-07-16",
 
 	"require": {
 		"php": "~8.2"
 	},
 	"require-dev": {
 		"phpmd/phpmd": "~2.15",
-		"phpstan/phpstan": "~2.1",
+		"phpstan/phpstan": "~2.2",
 		"phpstan/phpstan-phpunit": "~2.0",
-		"sat-hub/phpcpd": "~7.0.0",
-		"sat-hub/phploc": "~8.0.0",
-		"sat-hub/phpunit": "~1.10.0",
+		"sat-hub/phpcpd": "~7.0.1",
+		"sat-hub/phploc": "~8.0.3",
+		"sat-hub/phpunit": "~1.10.1",
 		"squizlabs/php_codesniffer": "~3.13"
 	},
 	"repositories": [

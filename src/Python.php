@@ -58,6 +58,10 @@ class Python
 		return $this->version;
 	}
 
+	/**
+	 * @param array<string>|string $arguments
+	 * @param array<string>|null $output
+	 */
 	public function run(array|string $arguments, ?array &$output = null, ?string $input = null): int {
 		if (is_array($arguments)) {
 			$command = trim(implode(' ', $arguments));

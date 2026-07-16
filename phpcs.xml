@@ -5,9 +5,19 @@
     <file>test</file>
     <rule ref="PSR12">
         <exclude name="Generic.Files.LineLength"/>
+        <exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
         <exclude name="PSR2.ControlStructures.SwitchDeclaration"/>
         <exclude name="PSR12.Files.DeclareStatement"/>
         <exclude name="PSR12.Files.FileHeader"/>
+        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
     </rule>
     <rule ref="Generic.Commenting.Todo"/>
+    <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+    <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="indent" value="4"/>
+            <property name="tabIndent" value="true"/>
+        </properties>
+    </rule>
 </ruleset>

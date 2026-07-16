@@ -8,7 +8,7 @@ class StdinFile implements \Stringable
 {
 	protected string $tmpPath;
 
-	public static function withContent(string $content): static {
+	public static function withContent(string $content): StdinFile {
 		$file = new self();
 		return $file->write($content);
 	}
